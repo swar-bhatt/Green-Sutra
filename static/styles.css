@@ -1,0 +1,296 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+header {
+  background: url('https://images.unsplash.com/photo-1500595046743-dd26eb716c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  color: rgb(2, 58, 17);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-content h1 i {
+  margin-right: 0.5rem;
+  color: #ffca28;
+}
+
+.header-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main Container */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Form Styling */
+.form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcedc8;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #388e3c;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-group label i {
+  margin-right: 0.5rem;
+  color: #ffca28;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dcedc8;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #f1f8e9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #388e3c;
+  box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#submitBtn {
+  background-color: #388e3c;
+  color: white;
+}
+
+#submitBtn:hover {
+  background-color: #2e7d32;
+  transform: translateY(-2px);
+}
+
+#resetBtn {
+  background-color: #ffca28;
+  color: #333;
+}
+
+#resetBtn:hover {
+  background-color: #ffb300;
+  transform: translateY(-2px);
+}
+
+/* Result Section */
+/* Result Section */
+.result {
+  margin-top: 2rem;
+  background: #f1f8e9; /* Light green background */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcedc8;
+}
+
+.result h3 {
+  font-size: 1.5rem;
+  color: #388e3c;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result h3 i {
+  color: #ffca28; /* Yellow icon for the result header */
+}
+
+/* Style for each recommendation item */
+#resultContent {
+  font-size: 1rem;
+  color: #14960e;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dcedc8; /* Subtle separator */
+}
+
+.recommendation-item:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+.recommendation-item .emoji {
+  font-size: 1.2rem;
+  width: 20px; /* Fixed width for alignment */
+}
+
+.recommendation-item .label {
+  font-weight: 600;
+  color: #388e3c; /* Green for labels */
+  flex: 0 0 200px; /* Fixed width for labels to align values */
+}
+
+.recommendation-item .value {
+  color: #333;
+  flex: 1; /* Take remaining space */
+}
+
+/* Suggestions Section */
+.suggestions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dcedc8;
+}
+
+.suggestions .suggestion-header {
+  font-weight: 600;
+  color: #388e3c;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.suggestions .suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+
+/* Loading Spinner */
+.loading::before {
+  content: '\f1ce';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #388e3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+  background-color: #2e7d32;
+  transform: translateY(-2px);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Styling */
+.error {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #388e3c;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .header-content h1 {
+      font-size: 1.8rem;
+  }
+
+  .header-content p {
+      font-size: 0.9rem;
+  }
+
+  .form {
+      padding: 1.5rem;
+  }
+
+  .form-buttons {
+      flex-direction: column;
+  }
+
+  button {
+      width: 100%;
+  }
+
+  /* Fade-In Animation for Recommendation Items */
+.recommendation-item, .suggestion-item {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+}

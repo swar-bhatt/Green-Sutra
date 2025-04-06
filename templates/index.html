@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green-Sutra 🌾</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-tractor"></i> Green-Sutra </h1>
+            <p>Get personalized farming advice to grow better crops!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Form Section -->
+            <form id="adviceForm" method="post" action="/get_advice" enctype="application/x-www-form-urlencoded" class="form">
+                <div class="form-group">
+                    <label for="state"><i class="fas fa-map-marker-alt"></i> State:</label>
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>Select a state</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="soil_type"><i class="fas fa-seedling"></i> Soil Type:</label>
+                    <select id="soil_type" name="soil_type" required>
+                        <option value="" disabled selected>Select a soil type</option>
+                        <option value="Alluvial">Alluvial</option>
+                        <option value="Black Cotton">Black Cotton</option>
+                        <option value="Clay">Clay</option>
+                        <option value="Laterite">Laterite</option>
+                        <option value="Loamy">Loamy</option>
+                        <option value="Mountain Soil">Mountain Soil</option>
+                        <option value="Red Laterite">Red Laterite</option>
+                        <option value="Red Sandy">Red Sandy</option>
+                        <option value="Sandy">Sandy</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous_crop"><i class="fas fa-leaf"></i> Previous Crop:</label>
+                    <select id="previous_crop" name="previous_crop" required>
+                        <option value="None">None</option>
+                        <option value="Almond">Almond</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Apricot">Apricot</option>
+                        <option value="Areca Nut">Areca Nut</option>
+                        <option value="Bajra">Bajra</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Barley">Barley</option>
+                        <option value="Black Pepper">Black Pepper</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Cardamom">Cardamom</option>
+                        <option value="Cashew">Cashew</option>
+                        <option value="Castor">Castor</option>
+                        <option value="Chili">Chili</option>
+                        <option value="Coconut">Coconut</option>
+                        <option value="Coffee">Coffee</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Ginger">Ginger</option>
+                        <option value="Gram">Gram</option>
+                        <option value="Grapes">Grapes</option>
+                        <option value="Groundnut">Groundnut</option>
+                        <option value="Guar">Guar</option>
+                        <option value="Jowar">Jowar</option>
+                        <option value="Jute">Jute</option>
+                        <option value="Litchi">Litchi</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Mango">Mango</option>
+                        <option value="Millets">Millets</option>
+                        <option value="Mustard">Mustard</option>
+                        <option value="Naga King Chili">Naga King Chili</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Passion Fruit">Passion Fruit</option>
+                        <option value="Pea">Pea</option>
+                        <option value="Peas">Peas</option>
+                        <option value="Pepper">Pepper</option>
+                        <option value="Pineapple">Pineapple</option>
+                        <option value="Potato">Potato</option>
+                        <option value="Pulses">Pulses</option>
+                        <option value="Ragi">Ragi</option>
+                        <option value="Rajmash">Rajmash</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Rubber">Rubber</option>
+                        <option value="Saffron">Saffron</option>
+                        <option value="Soybean">Soybean</option>
+                        <option value="Sugarcane">Sugarcane</option>
+                        <option value="Sunflower">Sunflower</option>
+                        <option value="Tapioca">Tapioca</option>
+                        <option value="Tea">Tea</option>
+                        <option value="Tobacco">Tobacco</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Turmeric">Turmeric</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Walnut">Walnut</option>
+                        <option value="Wheat">Wheat</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fertilizer_used"><i class="fas fa-flask"></i> Fertilizer Used:</label>
+                    <select id="fertilizer_used" name="fertilizer_used" required>
+                        <option value="None">None</option>
+                        <option value="Urea">Urea</option>
+                        <option value="Compost">Compost</option>
+                        <option value="NPK">NPK</option>
+                        <option value="DAP">DAP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="water_hardness"><i class="fas fa-tint"></i> Water Hardness:</label>
+                    <select id="water_hardness" name="water_hardness" required>
+                        <option value="Hard">Hard</option>
+                        <option value="Soft">Soft</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="livestock"><i class="fas fa-cow"></i> Livestock:</label>
+                    <select id="livestock" name="livestock" required>
+                        <option value="None">None</option>
+                        <option value="Buffalo">Buffalo</option>
+                        <option value="Camels">Camels</option>
+                        <option value="Cattle">Cattle</option>
+                        <option value="Cows">Cows</option>
+                        <option value="Ducks">Ducks</option>
+                        <option value="Goats">Goats</option>
+                        <option value="Mithun">Mithun</option>
+                        <option value="None">None</option>
+                        <option value="Pigs">Pigs</option>
+                        <option value="Poultry">Poultry</option>
+                        <option value="Sheep">Sheep</option>
+                        <option value="Yaks">Yaks</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resources"><i class="fas fa-tools"></i> Resources:</label>
+                    <select id="resources" name="resources" required>
+                        <option value="None">None</option>
+                        <option value="Brush Cutter">Brush Cutter</option>
+                        <option value="Combine">Combine</option>
+                        <option value="Cultivator">Cultivator</option>
+                        <option value="Harrow">Harrow</option>
+                        <option value="Harvester">Harvester</option>
+                        <option value="Plough">Plough</option>
+                        <option value="Power Tiller">Power Tiller</option>
+                        <option value="Power Weeder">Power Weeder</option>
+                        <option value="Rake">Rake</option>
+                        <option value="Rotavator">Rotavator</option>
+                        <option value="Seed Drill">Seed Drill</option>
+                        <option value="Sprayer">Sprayer</option>
+                        <option value="Thrasher">Thrasher</option>
+                        <option value="Trailer">Trailer</option>
+
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn"><i class="fas fa-check"></i> Get Advice</button>
+                    <button type="button" id="resetBtn"><i class="fas fa-undo"></i> Reset</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Farming Assistant. All rights reserved.</p>
+    </footer>
+    
+    <!-- Link to External JavaScript -->
+    <script src="/static/script.js"></script>
+</body>
+</html>

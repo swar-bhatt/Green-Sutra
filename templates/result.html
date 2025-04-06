@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Assistant - Recommendation 🌾</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Inline styles for suggestions to match recommendation items */
+        .suggestions {
+            margin-top: 20px;
+        }
+        .suggestion-header {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #388e3c;
+            margin-bottom: 10px;
+        }
+        .suggestion-item {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            color: #409b38; /* Default text color for suggestions */
+        }
+        .suggestion-item .suggestion-text .bold-green {
+            font-weight: bold;
+            color: #4caf50 !important; /* Use !important to override any conflicting styles */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-tractor"></i> Green-Sutra </h1>
+            <p>Your personalized farming recommendation</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Result Section -->
+            <div id="result" class="result">
+                <h3><i class="fas fa-seedling"></i> Recommendation</h3>
+                <div id="resultContent">
+                    {% if error %}
+                        <div class="error">
+                            <i class="fas fa-exclamation-circle"></i> Error: {{ error }}
+                        </div>
+                    {% else %}
+                        {% for item in recommendation_items %}
+                            <div class="recommendation-item" data-label="{{ item.label }}">
+                                <span class="emoji">{{ item.emoji }}</span>
+                                <span class="label">{{ item.label }}</span>
+                                <span class="value">{{ item.value }}</span>
+                            </div>
+                        {% endfor %}
+                        {% if suggestions %}
+                            <div class="suggestions">
+                                <div class="suggestion-header">
+                                    <i class="fas fa-lightbulb"></i>  Room for Improvement:
+                                </div>
+                                {% for suggestion in suggestions %}
+                                <div class="suggestion-item">
+                                    <span class="suggestion-text">{{ suggestion | safe }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <!-- Back Button -->
+                <div class="back-button">
+                    <a href="/" class="btn"><i class="fas fa-arrow-left"></i> Back to Form</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Farming Assistant. All rights reserved.</p>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.recommendation-item, .suggestion-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
